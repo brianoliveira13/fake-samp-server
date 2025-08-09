@@ -1,5 +1,5 @@
 from samp_server import SAMPServer
-from samp_server.handlers import handle_server_info, handle_server_rules, handle_player_list
+from samp_server.handlers import handle_server_info, handle_server_rules
 
 def main():
     server = SAMPServer()
@@ -7,7 +7,6 @@ def main():
 
     server.server_info.set(handle_server_info)
     server.server_rules.set(handle_server_rules)
-    server.player_list.set(handle_player_list)
 
     print("Starting SAMP server on port 7777...")
 

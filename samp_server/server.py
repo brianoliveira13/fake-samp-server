@@ -48,9 +48,9 @@ class SAMPServer:
             bs = ByteStream()
             result = None
 
-            if query.type == QueryType.SERVER_INFO:
+            if query.packet_type == QueryType.SERVER_INFO:
                 result = self.server_info.call(bs, query)
-            elif query.type == QueryType.SERVER_RULES:
+            elif query.packet_type == QueryType.SERVER_RULES:
                 result = self.server_rules.call(bs, query)
             else:
                 return

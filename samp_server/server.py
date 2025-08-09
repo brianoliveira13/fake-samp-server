@@ -58,3 +58,9 @@ class SAMPServer:
             self._socket.sendto(result, addr)
         except Exception as e:
             print(f'error processing packet: {e}')
+
+    def shutdown(self):
+        self._running = False
+        if self._socket:
+            self._socket.close()
+            self._socket = None

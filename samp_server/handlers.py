@@ -7,12 +7,12 @@ def handle_server_info(bs: ByteStream, query: QueryPacket):
     response._stream.write(query.server_ip)
     response._stream.write(query.server_port)
     response._stream.write(bytes([ord('i')]))
-    response.write_num(0, 'B')
-    response.write_num(422, 'H') 
-    response.write_num(500, 'H')
-    response.write_str('Mega Bomba Roleplay', 'I')
-    response.write_str('RPG', 'I')
-    response.write_str('Spanish', 'I')
+    response.write_num(0, 'B') # password, 0 = no password
+    response.write_num(422, 'H') # connected players
+    response.write_num(500, 'H') # max players
+    response.write_str('Mega Bomba Roleplay', 'I') # hostname
+    response.write_str('RPG', 'I') # gamemode
+    response.write_str('Spanish', 'I') # language
     return response.get()
 
 def handle_server_rules(bs: ByteStream, query: QueryPacket):

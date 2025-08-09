@@ -46,7 +46,7 @@ class SAMPServer:
                 return
             
             query = QueryPacket(data)
-            bs = ByteStream()
+            bs = ByteStream(data)
             result = None
 
             if query.packet_type == QueryType.SERVER_INFO:

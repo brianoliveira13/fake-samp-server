@@ -36,3 +36,6 @@ def handle_server_rules(bs: ByteStream, query: QueryPacket):
         response.write_str(key, 'B')
         response.write_str(value, 'B')
     return response.get() 
+
+def handle_server_ping(bs: ByteStream, query: QueryPacket) -> bytes:
+    return bs.get()

@@ -11,6 +11,7 @@ class SAMPServer:
         self._running = False
         self.server_info = Event()
         self.server_rules = Event()
+        self.server_ping = Event()
 
     def init(self, ip: str, port: int):
         try:
@@ -54,6 +55,9 @@ class SAMPServer:
             elif query.packet_type == QueryType.SERVER_RULES:
                 print('[fake-samp-server] received SERVER_RULES query')
                 result = self.server_rules.call(bs, query)
+            elif query.packet_type == QueryType.SERVER_PING:
+                print('[fake-samp-server] received SERVER_PING query')
+                result = self.server_ping.call(bs, query)
             else:
                 return
             

@@ -1,5 +1,5 @@
-from samp-server import SAMPServer
-from samp-server.handlers import handle_server_info, handle_server_rules, handle_player_list
+from samp_server import SAMPServer
+from samp_server.handlers import handle_server_info, handle_server_rules, handle_player_list
 
 def main():
     server = SAMPServer()

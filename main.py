@@ -3,7 +3,7 @@ from samp_server.handlers import handle_server_info, handle_server_rules
 
 def main():
     server = SAMPServer()
-    server.init(7777)
+    server.init('0.0.0.0', 7777)
 
     server.server_info.set(handle_server_info)
     server.server_rules.set(handle_server_rules)

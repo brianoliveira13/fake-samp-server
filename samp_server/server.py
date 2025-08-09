@@ -49,10 +49,10 @@ class SAMPServer:
             result = None
 
             if query.packet_type == QueryType.SERVER_INFO:
-                print('[fale-samp-server] received SERVER_INFO query')
+                print('[fake-samp-server] received SERVER_INFO query')
                 result = self.server_info.call(bs, query)
             elif query.packet_type == QueryType.SERVER_RULES:
-                print('[fale-samp-server] received SERVER_RULES query')
+                print('[fake-samp-server] received SERVER_RULES query')
                 result = self.server_rules.call(bs, query)
             else:
                 return
